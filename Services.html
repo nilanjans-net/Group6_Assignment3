@@ -7,6 +7,7 @@
     <link href="CSS/FormStyles.css" rel="stylesheet" type="text/css">
     <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
     <script src="Scripts/Services.js"></script>
+	<script src="Scripts/nps-api.js"></script>
 </head>
 
 <body>
@@ -32,8 +33,20 @@
     </div>
     <div class="body">
         <div class ="bodycont">
-            <h1 align="center">Services</h1>
-            <p id="intro">SOME TEXT</p>
+            <h1 align="center">National Parks</h1>
+            <table id="parksTable">
+
+					<thead>
+						<tr>
+							<th>Park Name</th>
+							<th>State</th>
+							<th>Description</th>
+							<th>URL</th>
+						</tr>
+					</thead>
+					
+
+			</table>
                     
             <!--determines last element before the header-->
 	    <br><span id="xyz">V</span>

@@ -80,6 +80,7 @@ div.bodycont {
     width: 80%;
     margin: 0 auto;
     border-radius: 30px 30px 30px 30px; 
+	
         
 }
 /*Footer div*/
@@ -375,4 +376,31 @@ div.clockpic {
     margin: 0 auto;  
     overflow: auto;
     
+}
+
+
+/*Service table*/
+#parksTable {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+  margin: 0 auto;
+}
+
+#parksTable td, #parksTable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#parksTable tr:nth-child(even){background-color: #f2f2f2;}
+
+#parksTable tr:hover {background-color: #ddd;}
+
+#parksTable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #4CAF50;
+  color: white;
+
 }
