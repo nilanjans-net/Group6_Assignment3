@@ -11,9 +11,8 @@ $( document ).ready(function() {
         contentType: "application/json",
         dataType: 'json',
         success: function(result){
-			console.log("HERE");
+			console.log(result);
 			//$('#parksTable thead').append(`<tt><td>Park Name</td><td>State</td><td>Description</td><td>URL</td></tt>`);
-			console.log("HERE2");
 			result.data.forEach(park => {
 				$('#parksTable').append(`<tr><td>${park.fullName}</td><td>${park.states}</td><td>${park.description}</td><td>${park.url}</td></tr>`);
 			});
