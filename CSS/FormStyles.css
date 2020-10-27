@@ -1,0 +1,81 @@
+@charset "utf-8";
+/*----------------Form elements styles--------------------------*/
+#submitbutton{    
+    background-color: deeppink;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius:6px;
+    color: white;
+    font-family: 'Oswald';
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    border:none;
+    margin-top: 1%;
+}
+
+#intro {    
+    font-family: Arial;
+    font-size: calc(3pt + 1vw);
+    font-style: normal;
+    font-variant: normal;     
+    width: 70%;
+    margin: 0 auto;
+    text-indent: 2%;
+    text-align: justify;
+    text-justify: inter-word;
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
+
+#highlight {   
+    font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+    font-size: calc(3pt + 1vw);
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 500;    
+}
+
+#highlight:hover{
+    background-color: palegoldenrod;
+}
+
+#titles {
+    	font-family: Arial;
+	font-size: calc(3pt + 1.5vw);
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+        color: cadetblue; 
+}
+
+#separate{
+    width: 49%;
+    margin: 0 auto;
+    float: left;
+    position: relative;
+    overflow: hidden;
+  
+}
+#timetable {   
+    font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+    font-size: calc(3pt + 1vw);
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 500; 
+    line-height: 110%;
+}
+#bottomimagecont{
+    width: 70%;
+    margin: 0 auto;    
+    position: relative;
+    overflow: hidden;
+
+    max-height: 440px;
+}
+
+.hiddenlabels {
+    font-size: 8pt;
+    color: red;
+    visibility: hidden;
+}
