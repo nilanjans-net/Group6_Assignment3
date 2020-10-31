@@ -1,19 +1,4 @@
 @charset "utf-8";
-/*----------------Form elements styles--------------------------*/
-#submitbutton{    
-    background-color: deeppink;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius:6px;
-    color: white;
-    font-family: 'Oswald';
-    font-size: 20px;
-    text-decoration: none;
-    cursor: pointer;
-    border:none;
-    margin-top: 1%;
-}
-
 #intro {    
     font-family: Arial;
     font-size: calc(3pt + 1vw);
@@ -28,54 +13,95 @@
     margin-top: 2%;
 }
 
-#highlight {   
-    font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
-    font-size: calc(3pt + 1vw);
-    font-style: normal;
-    font-variant: normal;
-    font-weight: 500;    
+.search_park_form_div {
+	margin:10px auto;
+	max-width: 400px;
+	font: 16px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-#highlight:hover{
-    background-color: palegoldenrod;
+
+.search_park_form_div input[type=search],
+select {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	border:1px solid #BEBEBE;
+	padding: 7px 7px;
+	margin:0px;
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+	outline: none;	
+
+
 }
 
-#titles {
-    	font-family: Arial;
-	font-size: calc(3pt + 1.5vw);
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 500;
-        color: cadetblue; 
+.search_park_form_div input[type=search]:focus,
+.search_park_form_div select:focus{
+	-moz-box-shadow: 0 0 8px #88D5E9;
+	-webkit-box-shadow: 0 0 8px #88D5E9;
+	box-shadow: 0 0 8px #88D5E9;
+	border: 1px solid #88D5E9;
 }
 
-#separate{
-    width: 49%;
-    margin: 0 auto;
-    float: left;
-    position: relative;
-    overflow: hidden;
-  
+.search_park_form_div button {
+	background: #4B99AD;
+	border: none;
+	color: #fff;
+	margin: 0 auto;
+	padding: 7px 7px;
+	display:block;
 }
-#timetable {   
-    font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
-    font-size: calc(3pt + 1vw);
-    font-style: normal;
-    font-variant: normal;
-    font-weight: 500; 
-    line-height: 110%;
-}
-#bottomimagecont{
-    width: 70%;
-    margin: 0 auto;    
-    position: relative;
-    overflow: hidden;
-
-    max-height: 440px;
+.search_park_form_div button:hover {
+	background: #4691A4;
+	box-shadow:none;
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
 }
 
-.hiddenlabels {
-    font-size: 8pt;
-    color: red;
-    visibility: hidden;
+.search_park_form_div label {
+	font-weight: bold;
+	width: 30%;
+}
+
+.search_park_form_div .field-long {
+	width: 70%;
+}
+
+.form_lines {
+	display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+	margin: 10px 0 10px 0;
+	
+}
+
+.form_lines #search_click {
+	text-align:center;
+}
+
+.results {
+	padding: 30px 20px 20px 20px;
+	width: 80%;
+	margin: 0 auto;
+	height: 20%;
+	position: relative;
+	display: none;
+	overflow: auto;
+}
+
+.results .top-level {
+  margin: 3px 0 10px 0;
+  text-decoration: none;
+  transition: background-color .3s;
+  display: block;
+}
+
+.top-level:hover {
+  background-color: #ffffed;
+}
+
+.no_results {
+	color: red;
 }
