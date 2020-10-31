@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>About</title>
     <link href="CSS/MainStyle.css" rel="stylesheet" type="text/css"> 
+	<link href="CSS/About.css" rel="stylesheet" type="text/css"> 
     <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
 
 </head>
@@ -31,22 +32,35 @@
     </div> 
 
         <div class ="bodycont">
-            <h1 align="center">About</h1>
-            <table align="center" width ="70%" border="0" cellspacing="5">           
-                
-                <tr>                    
-                    <td width="50%">                        
-                        <p id="maintext">SOME TEXT</p><br/>                        
-                    </td>
-                    <td width='50%' align='center' valign='top'>
-                        <img src='Images/AnyImage.png' width ='420'/>
-                    </td>
-                </tr>
-            </table>
-              
+            <div class="devs">
+				<div class="person">
+					<div class="img_container"><img src="Images/Daniel.jpg" class="image"/></div>
+					<h2 class="header">Daniel</h2>
+					<p>I have worked in research since 2008.
+                            As such, I am prone to validating and operationalizing data into applicable reporting.
+                            Many of the Api’s originally discovered had confusing and complex metrics which would have been difficult to apply for an end user, much less to program.
+                            After researching some about the Animal Services, Department of Justice, and Drug Interactions api’s,
+                            I quickly agreed to use what seemed like a very useful Api in the National Parks Service.
+                            The former Api’s were either convoluted, or in PDF format tables which would not have fulfilled the requirement.
+                            The National Parks Service api however had many query options, with useful output that we could work with.
+                            Alex and Nilanjan’s familiarity with calling api’s made any further parsing and filtering of the queries more manageable. After
+                            deciding on a concept I have formated the about page and home page. </p>
+				</div>
+				<div class="person" id="img_border">					
+					<div class="img_container"><img src="Images/Alex.jpg" class="image"/></div>
+					<h2 class="header">Alex</h2>
+					<p>I have experience working as a backend developer as well as some front-end knowledge. I am passionate about learning new and existing technologies, and emjoy solving technical problems. For this Website I contributed backend NPS API calls for dynamic content as well as front page banner logic and dynamic elements in Park Search Page.</p>
+				</div>
+				<div class="person">					
+					<div class="img_container"><img src="Images/AnyImage.png" class="image"/></div>
+					<h2 class="header">Nilanjan</h2>
+					<p>Nilanjan's text</p>
+				</div>
+			</div>
+            <div class="data_model"><p>Placeholder for data model</p></div>  
             
-            <!--determines last element before the header-->
-	    <br><span id="xyz">V</span>
+
+	    
         </div>
 
         

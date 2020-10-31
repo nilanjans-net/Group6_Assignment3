@@ -11,10 +11,6 @@ html, body {
     min-width: 900px;
     min-height: 900px;
 }
-/*invisible element used to find height of scrollable area*/
-#xyz{
-    opacity: 0;    
-}
 /*Main page header (visible)*/
 div.header {
     width: 80%;
@@ -206,44 +202,6 @@ h1.logotext {
     font-variant: normal;  
 	color:#F1B930;
 }
-
-/*Text format for address and hours*/
-.maphourstext {  
-    font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
-    font-size: calc(3pt + 0.5vw); 
-    font-style: normal; 
-    font-variant: simplified;
-    line-height: 100%;        
-    color: slategray;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;     
-}
-a.maphourstext:hover, a.maphourstext:visited, a.maphourstext:link, a.maphourstext:active {
-    text-decoration: none;
-    font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
-    font-size: calc(3pt + 0.5vw); 
-    font-style: normal; 
-    font-variant: simplified;
-    line-height: 100%;        
-    color: slategray;
-    display: flex;
-    justify-content: center;
-    flex-direction: column; 
-    font-weight: bold;
-}
-/*Container for map and hours text elements*/
-.mapandclockcont {
-    width: 25%;    
-    min-height: 20px;
-    height: 100%;
-    float: left;       
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin-left: 1%;
-    position: relative;
-}
 /*Logo picture container*/
 div.logopic {
    width: 4%;  
@@ -268,123 +226,4 @@ a.homelink {
     border: 0;
     float: left;    
     z-index: 3;
-}
-/*Map picture container*/
-div.mappic {
-   width: 1.5%;  
-   min-width: 20px; 
-   height:auto; 
-   background-image: url(../Images/MapMarker.png);
-   background-size:contain;
-   background-repeat:no-repeat;   
-   padding:0;
-   background-position: center center; 
-}
-/*Clock picture container*/
-div.clockpic {
-   width: 3%;  
-   min-width: 30px; 
-   height:auto; 
-   background-image: url(../Images/Clock.png);
-   background-size:contain;
-   background-repeat:no-repeat;
-   background-position: center center;
-   padding:0;
-   vertical-align: middle;  
-}
-/*----------------End of header elements------------------------*/
-/*----------------Other Styles----------------------------------*/
-/*Main paragraph text*/
-#maintext {    
-    font-family: Molengo;
-    font-size: calc(3pt + 1vw);
-    font-style: normal;
-    font-variant: normal;     
-    width: 100%;
-    margin: 0 auto;
-    text-indent: 2%;
-    text-align: justify;
-    text-justify: inter-word;
-}
-#secondaryheader {    
-    font-family: Molengo;
-    font-size: calc(6pt + 1vw);
-    font-style: oblique;
-    font-variant: ornament;     
-    width: 100%;
-    margin: 0 auto;
-    text-indent: 2%;
-    text-align: justify;
-    text-justify: inter-word;
-}
-
-#centerboxheader {
-    width: 25%;
-    height: 4.5%;
-    min-height: 75px;      
-    z-index: 0; 
-    margin: 0 auto;    
-    position: relative;   
-    min-width: 350px;
-    margin: 0 auto;    
-    overflow: hidden;
-    
-}
-
-.stylistslogobox{  
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;   
-    flex-direction: column;    
-    height: 100%;
-    min-height: 50px;
-    min-width: 70px;
-    width: 20%; 
-    float: left;
-    margin: 0 auto; 
-    overflow: hidden;    
-}
-/*text signature in the footer*/
-.stylistslogotextbox{ 
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;   
-    flex-direction: column;    
-    height: 100%;
-    min-height: 50px;
-    min-width: 200 px;
-    width: 80%;    
-    float: left;
-    margin: 0 auto;  
-    overflow: auto;
-    
-}
-
-
-/*Service table*/
-#parksTable {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 80%;
-  margin: 0 auto;
-}
-
-#parksTable td, #parksTable th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-#parksTable tr:nth-child(even){background-color: #f2f2f2;}
-
-#parksTable tr:hover {background-color: #ddd;}
-
-#parksTable th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: center;
-  background-color: #4CAF50;
-  color: white;
-
 }

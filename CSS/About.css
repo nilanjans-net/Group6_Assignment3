@@ -1,0 +1,38 @@
+.devs {
+	padding-top: 10px;
+	display: flex;
+}
+
+.person  {
+	padding: 7px;
+	width: 33.33%;
+	min-height: 100px;	
+}
+
+.image {
+	height:100%;
+	width:100%;
+}
+
+.img_container {
+	height:53%;
+	width:80%;
+	overflow:hidden;
+	margin: 0 auto;
+	border-radius: 150px;
+}
+
+#img_border {
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	
+}
+.header {
+	text-align: center;
+}
+
+.data_model {
+	min-height: 250px;
+	border-top: 1px solid black;
+}
+

@@ -98,10 +98,75 @@ select {
   display: block;
 }
 
+p {
+	margin: 16px 0 0 0;
+}
 .top-level:hover {
   background-color: #ffffed;
 }
 
 .no_results {
 	color: red;
+}
+
+/*Fees table*/
+#parksTable {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+}
+
+#parksTable td, #parksTable th {
+  border: 1px solid #ddd;
+}
+
+#parksTable tr:nth-child(even){background-color: #f2f2f2;}
+
+
+#parksTable th {
+  text-align: center;
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+.camp_button {
+  position: relative;
+  background-color: #4CAF50;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50px;
+  display:inline-block;
+}
+
+.camp_button:hover {
+	background: #4691A4;
+	box-shadow:none;
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+}
+.camp_button:after {
+  content: "";
+  background: #90EE90;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px!important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.camp_button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
 }

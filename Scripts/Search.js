@@ -36,14 +36,33 @@ $(document).on('click','#search_click',function(){
 			
 	
 		if (query != "") {
-			execQuery(query);	
+			execQuery(query, 'parkSearch', '');	
 		} else {
 		//display error
 		}
 	}
 });
 
-function execQuery(query) {
+$(document).on('click','#check_avail_button',function(){
+	var parkCode = $(this).attr("value");
+	if (parkCode !== undefined && parkCode != '') {
+		var query = `campgrounds?parkCode=${parkCode}`;
+		execQuery(query, 'campSearch', parkCode);
+	}
+	
+	
+});
+
+$(document).on('click','#reserve_button',function(){
+	var campId = $(this).attr("value");
+	window.location.replace("Contacts.html?id=" + campId);
+	console.log("Camp ID: " + campId);
+	
+	
+});
+
+
+function execQuery(query, type, parkCode) {
 	let endpoint = 'https://developer.nps.gov/api/v1/';
 	let apiKey = 'Xui3j5YQKjKLv7a5gqDYxeWdkMft7k9xdtduFSgt';
 	$.ajaxSetup({
@@ -54,12 +73,28 @@ function execQuery(query) {
         url: endpoint + query,		
         contentType: "application/json",
         dataType: 'json',
-		success: function(result) { displayResults(result) },
+		success: function(result) { 
+			if ('parkSearch' == type) {
+				displayResults(result) 
+			} else if ('campSearch' == type) {
+				displayCampgrounds(result, parkCode);
+			}
+		},
 		error: function() {
-			console.log("error!")
-			//$('#info').html('<p>An error has occurred</p>');
+			console.log("error!");
 		}
     })  
+}
+
+function displayCampgrounds(results, parkCode) {
+	var pName = `#park_${parkCode}`;
+	console.log(results);
+	var campgroundTable = getCampsTable(results);
+	if (campgroundTable !== undefined && campgroundTable != '') {
+		var paragraph = $(pName);
+		paragraph.empty();
+		paragraph.append(campgroundTable);
+	}
 }
 
 function displayResults(res) {
@@ -70,7 +105,20 @@ function displayResults(res) {
 			$(".output").empty();
 			$(".output").append(`<p><b>Results found:</b>${res.total}</p>`);
 			res.parks.forEach(park => {				
-				var formulateLi = `<div class="top-level"><h3><a href="${park.url}">${park.fullName}</a></h3><p><b>Description:</b>${park.description}</p></div>`
+				var activitiesStr = getActivities(park);
+				var feesTbl = getFeesTbl(park);
+				
+				var formulateLi = `<div class="top-level"><h3><a href="${park.url}">${park.fullName}</a></h3><p><b>Description:</b>${park.description}</p>`;
+				if (activitiesStr.length != 0) { 
+					formulateLi = formulateLi + `<p><b>Activities Available: </b>${activitiesStr}</p>`
+				}
+				
+				if (feesTbl.length != 0) { 
+					formulateLi = formulateLi + `<p><b>Entrance Fees: </b>${feesTbl}</p>`
+				}
+				
+				
+				formulateLi = formulateLi + `<p><b>Campgrounds: </b><button id="check_avail_button" class = "camp_button" value=${park.parkCode}>Check availability</button></p><p id="${'park_' + park.parkCode}"></p></div>`;
 				$(".output").append(formulateLi);				
 			});			
 		} else {
@@ -94,5 +142,58 @@ function filterNationalParks(results) {
 	}
 	filteredResults.total = counter;
 	return filteredResults;
+}
+
+function getActivities(park) {
+	var activitiesStr = '';
+	if (park.activities !== undefined) {
+		park.activities.forEach(activity => {
+			if (activitiesStr.length != 0) {
+				activitiesStr = activitiesStr + ', ' + activity.name;
+			} else {
+				activitiesStr = activity.name;
+			}
+		});
+	}
+	return activitiesStr;
+}
+
+function getFeesTbl(park) {
+	var feesTbl = '';
+	if (park.entranceFees !== undefined && park.entranceFees.length != 0) {
+		if (park.entranceFees.length == 1 & park.entranceFees[0].cost == "0.00") {
+			feesTbl = 'There is no entrance fee to the park';
+		} else {
+			park.entranceFees.forEach(feeObj => {
+				if (feesTbl.length == 0) {
+					feesTbl = `<thead><tr><th>Cost</th><th>Description</th></tr></thead><tbody><tr><td>${feeObj.cost}</td><td>${feeObj.title}</td></tr>`;
+				} else {
+					feesTbl = feesTbl + `<tr><td>$${feeObj.cost}</td><td>${feeObj.title}</td></tr>`;
+				}
+			});
+			feesTbl = '<table id="parksTable">' + feesTbl + '</tbody></table>';
+		}
+	}
+	return feesTbl;
+}
+
+function getCampsTable(results) {
+	var campTbl = '';
+	if (results !== undefined && results.total != 0) {
+		results.data.forEach(camp => {
+			campTbl = campTbl + `<li><b>${camp.name + "</b>; Total Available: " + camp.campsites.totalSites}<p>${camp.description}</p>`;
+			if (camp.reservationUrl != "") {
+				 campTbl = campTbl + `<p><button id="reserve_button" class = "camp_button" value=${camp.parkCode + "_" + camp.id}>Reserve</button></p></li>`;
+			} else {
+				campTbl = campTbl + `<p class="no_results">This campground is not reservable</p>`;
+			}
+			campTbl = campTbl + '<br></li>';
+			
+		});
+		campTbl = '<ol>' + campTbl + '</ol>';
+	} else {
+		campTbl = '<p class="no_results"> No Campgrounds Found!</p>';
+	}
+	return campTbl;
 }
        
