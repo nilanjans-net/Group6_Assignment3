@@ -26,20 +26,21 @@ $(document).on('click','#search_click',function(){
 	var parkCode = $("#park_code").val();	
 
 	if (parkName != "" || parkState != null || parkCode != null) {
-		var query = `parks?q="${parkName}"`;
-		if (parkState != null) {
+		var query = 'parks?';
+		if (parkName != "") {
+			query = query + `q="${parkName}"`;
+		}
+		if (parkState != null && parkState != "") {
 			query = query + `&stateCode=${parkState}`;
 		};
-		if (parkCode != null) {
+		if (parkCode != null  && parkCode != "") {
 			query = query + `&parkCode=${parkCode}`;
 		};
 			
 	
-		if (query != "") {
+		if (query != 'parks?') {
 			execQuery(query, 'parkSearch', '');	
-		} else {
-		//display error
-		}
+		} 
 	}
 });
 
