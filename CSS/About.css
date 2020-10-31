@@ -14,6 +14,7 @@
 	width:100%;
 }
 
+
 .img_container {
 	height:53%;
 	width:80%;
@@ -27,11 +28,21 @@
 	border-right: 1px solid black;
 	
 }
+
+.imaged {
+	height: 99%;
+	width: 99%;
+}
 .header {
 	text-align: center;
 }
 
 .data_model {
+	min-height: 250px;
+	border-top: 1px solid black;
+}
+
+.github_links {
 	min-height: 250px;
 	border-top: 1px solid black;
 }
